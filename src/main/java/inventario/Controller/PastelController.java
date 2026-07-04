@@ -64,5 +64,4 @@ public class PastelController {
 //		"diasVidaUtil": 6,
 //		"nombre": "Pastel de Chocolate Alemán",
 //		"fechaFabricacion": "2026-07-03",
-//		"codigoBarras": "7501234567890"
 //		}
