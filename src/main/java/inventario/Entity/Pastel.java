@@ -18,14 +18,16 @@ public class Pastel {
     private LocalDate fechaCaducidad;
     private Double precio;
     private String medida;
+    @ManyToOne
+    @JoinColumn (name = "sucursal_id")
+    private Sucursal sucursal;
 
     public Pastel(){
         // Este es un constructor vacio para que Spring funcione
     }
     //Contructor con parametros
 
-
-    public Pastel(Long id, String codigoBarras, String nombre, LocalDate fechaFabricacion, Integer diasVidaUtil, LocalDate fechaCaducidad, Double precio, String medida) {
+    public Pastel(Long id, String codigoBarras, String nombre, LocalDate fechaFabricacion, Integer diasVidaUtil, LocalDate fechaCaducidad, Double precio, String medida, Sucursal sucursal) {
         this.id = id;
         this.codigoBarras = codigoBarras;
         this.nombre = nombre;
@@ -34,7 +36,9 @@ public class Pastel {
         this.fechaCaducidad = fechaCaducidad;
         this.precio = precio;
         this.medida = medida;
+        this.sucursal = sucursal;
     }
+
 
     //Getter y Setter
 
@@ -101,5 +105,13 @@ public class Pastel {
 
     public void setMedida(String medida) {
         this.medida = medida;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
     }
 }

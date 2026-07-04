@@ -16,8 +16,10 @@ public class Empleado {
     private String turno;
     private LocalTime horaEntrada;
     private LocalTime horaSalida;
-    private String sucursal;
     private Double sueldo;
+    @ManyToOne
+    @JoinColumn (name = "sucursal_id") //Esta sera la columna donde se uniran las tablas
+    private Sucursal sucursal;
 
     public Empleado(){
         // constructor vacio para que SpringBoot funcione
@@ -25,16 +27,18 @@ public class Empleado {
 
     // Constructores
 
-    public Empleado(Long id, String nombre, String puesto, String turno, LocalTime horaEntrada, LocalTime horaSalida, String sucursal, Double sueldo) {
+    public Empleado(Long id, String nombre, String puesto, String turno, LocalTime horaEntrada, LocalTime horaSalida, Double sueldo, Sucursal sucursal) {
         this.id = id;
         this.nombre = nombre;
         this.puesto = puesto;
         this.turno = turno;
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
-        this.sucursal = sucursal;
         this.sueldo = sueldo;
+        this.sucursal = sucursal;
     }
+
+
     // Getters and Setters
 
 
@@ -86,19 +90,19 @@ public class Empleado {
         this.horaSalida = horaSalida;
     }
 
-    public String getSucursal() {
-        return sucursal;
-    }
-
-    public void setSucursal(String sucursal) {
-        this.sucursal = sucursal;
-    }
-
     public Double getSueldo() {
         return sueldo;
     }
 
     public void setSueldo(Double sueldo) {
         this.sueldo = sueldo;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
     }
 }

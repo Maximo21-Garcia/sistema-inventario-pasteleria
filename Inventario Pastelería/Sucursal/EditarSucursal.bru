@@ -1,0 +1,27 @@
+meta {
+  name: EditarSucursal
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:8080/api/sucursal/1
+  body: json
+  auth: inherit
+}
+
+body:json {
+   {
+      "id": 1,
+      "nombre": "Sucursal Universidad",
+      "ubicacion": "Av. Universidad 123",
+      "telefono": 55123456,
+      "cantidadDePasteles": 45,
+      "renta": 15000,
+      "gastoLuz": 1200.5,
+      "gastoAgua": 450,
+      "numeroDePersonal": 8,
+      "empleados": [],
+      "pastels": []
+    }
+}

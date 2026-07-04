@@ -1,0 +1,25 @@
+meta {
+  name: AgregarSucursal
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/sucursal
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "nombre": "Sucursal Tlalpan",
+      "ubicacion": "Av perisur #217",
+      "telefono": 5557329845,
+      "cantidadDePasteles": 20,
+      "renta": 15000.0,
+      "gastoLuz": 1500.0,
+      "gastoAgua": 600.0,
+      "numeroDePersonal": 5
+    }
+  
+}

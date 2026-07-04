@@ -2,6 +2,8 @@ package inventario.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table (name = "Sucursal")
 public class Sucursal {
@@ -10,12 +12,19 @@ public class Sucursal {
     private Long id;
     private String nombre;
     private String ubicacion;
-    private Integer telefono;
+    private Long telefono;
     private Integer cantidadDePasteles;
     private Double renta;
     private Double gastoLuz;
     private Double gastoAgua;
     private Integer numeroDePersonal;
+
+    //hacemos la relacion con las otras tablas
+    @OneToMany(mappedBy = "sucursal")
+    private List<Empleado> empleados;
+
+    @OneToMany(mappedBy = "sucursal")
+    private List<Pastel> pastels;
 
     //constructor vacio
     public Sucursal(){
@@ -23,7 +32,7 @@ public class Sucursal {
     }
     // contructores
 
-    public Sucursal(Long id, String nombre, String ubicacion, Integer telefono, Integer cantidadDePasteles, Double renta, Double gastoLuz, Double gastoAgua, Integer numeroDePersonal) {
+    public Sucursal(Long id, String nombre, String ubicacion, Long telefono, Integer cantidadDePasteles, Double renta, Double gastoLuz, Double gastoAgua, Integer numeroDePersonal, List<Empleado> empleados, List<Pastel> pastels) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -33,8 +42,13 @@ public class Sucursal {
         this.gastoLuz = gastoLuz;
         this.gastoAgua = gastoAgua;
         this.numeroDePersonal = numeroDePersonal;
+        this.empleados = empleados;
+        this.pastels = pastels;
     }
+
+
     //Getters and Setters
+
 
     public Long getId() {
         return id;
@@ -60,11 +74,11 @@ public class Sucursal {
         this.ubicacion = ubicacion;
     }
 
-    public Integer getTelefono() {
+    public Long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
 
@@ -106,5 +120,21 @@ public class Sucursal {
 
     public void setNumeroDePersonal(Integer numeroDePersonal) {
         this.numeroDePersonal = numeroDePersonal;
+    }
+
+    public List<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(List<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+
+    public List<Pastel> getPastels() {
+        return pastels;
+    }
+
+    public void setPastels(List<Pastel> pastels) {
+        this.pastels = pastels;
     }
 }
