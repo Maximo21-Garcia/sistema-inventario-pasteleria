@@ -25,7 +25,7 @@ public class Pastel {
     //Contructor con parametros
 
 
-    public Pastel(Long id, String codigoBarras, String nombre, LocalDate fechaFabricacion, Integer diasVidaUtil, LocalDate fechaCaducidad, Double precio, String tamaño) {
+    public Pastel(Long id, String codigoBarras, String nombre, LocalDate fechaFabricacion, Integer diasVidaUtil, LocalDate fechaCaducidad, Double precio, String medida) {
         this.id = id;
         this.codigoBarras = codigoBarras;
         this.nombre = nombre;
@@ -33,7 +33,7 @@ public class Pastel {
         this.diasVidaUtil = diasVidaUtil;
         this.fechaCaducidad = fechaCaducidad;
         this.precio = precio;
-        this.medida = tamaño;
+        this.medida = medida;
     }
 
     //Getter y Setter

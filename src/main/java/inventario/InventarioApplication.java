@@ -13,13 +13,3 @@ public class InventarioApplication {
 	}
 		//http://localhost:8080/api/pasteles
 }
- // JSON Postman
-
-//{
-//		"medida": "mediano",
-//		"precio": 380.00,
-//		"diasVidaUtil": 6,
-//		"nombre": "Pastel de Chocolate Alemán",
-//		"fechaFabricacion": "2026-07-03",
-//		"codigoBarras": "7501234567890"
-//		}

@@ -57,3 +57,12 @@ public class PastelController {
         return pastel.map(ResponseEntity :: ok).orElseGet(()-> ResponseEntity.notFound().build());
     }
 }
+
+//{
+//		"medida": "mediano",
+//		"precio": 380.00,
+//		"diasVidaUtil": 6,
+//		"nombre": "Pastel de Chocolate Alemán",
+//		"fechaFabricacion": "2026-07-03",
+//		"codigoBarras": "7501234567890"
+//		}
