@@ -19,6 +19,11 @@ public class SucursalController {
     public List<Sucursal> listaSucursales(){
         return sucursalService.obtenerTodasLasSucursales();
     }
+    //Mostrar informacion de una sucursal
+    @GetMapping ("/{id}")
+    public ResponseEntity<Sucursal> obtenerDetalles(@PathVariable Long id){
+        return sucursalService.buscarPorId(id).map(ResponseEntity ::ok).orElse(ResponseEntity.notFound().build());
+    }
 
     //Registrar una Sucursal
     @PostMapping

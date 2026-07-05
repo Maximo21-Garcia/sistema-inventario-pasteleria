@@ -1,11 +1,13 @@
 package inventario.Service;
 
+import com.fasterxml.jackson.annotation.OptBoolean;
 import inventario.Entity.Sucursal;
 import inventario.Repository.SucursalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SucursalService {
@@ -17,6 +19,11 @@ public class SucursalService {
     public List<Sucursal> obtenerTodasLasSucursales(){
         return sucursalRepository.findAll();
     }
+    //Mostrar Sucursal
+    public Optional<Sucursal> buscarPorId(Long id){
+        return sucursalRepository.findById(id);
+    }
+
     //Guardar una sucursal
     public Sucursal guardarSucursal (Sucursal sucursal){
         return sucursalRepository.save(sucursal);
